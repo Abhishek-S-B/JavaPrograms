@@ -1,5 +1,5 @@
 package Java.LinkedList;
-
+import java.lang.*;
 import java.util.*;
 
 public class practiceVLL {
