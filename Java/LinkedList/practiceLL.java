@@ -66,6 +66,25 @@ public class practiceLL {
         secondLast = null;
     }
 
+    public void deleteNode(int position)
+    {
+        Node temp = head;
+        if (position == 0) {
+            head = temp.next;
+            return;
+        }
+        for (int i = 0; temp != null && i < position - 1; i++)
+            temp = temp.next;
+
+        if (temp == null || temp.next == null)
+            return;
+
+        Node next = temp.next.next;
+
+        temp.next = next;
+    }
+
+
     public void printList() {
         if (isEmpty()) {
             System.out.println("List is empty");
@@ -89,7 +108,7 @@ public class practiceLL {
             list.addFirst(a);
         }
 
-        // list.deleteFirst();
+         list.deleteNode(2);
         list.printList();
     }
 
