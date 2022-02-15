@@ -19,6 +19,5 @@ public class vehicleNumber {
                 addZero = "0" + addZero;
             System.out.println(numberPlate.substring( 0, 5 ) + addZero);
         }
-
     }
 }
