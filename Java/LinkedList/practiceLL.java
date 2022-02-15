@@ -108,7 +108,7 @@ public class practiceLL {
             list.addFirst(a);
         }
 
-         list.deleteNode(2);
+        //list.deleteNode(2);
         list.printList();
     }
 
