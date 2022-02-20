@@ -12,7 +12,7 @@ public class exchangeNodes {
             int a = sc.nextInt();
             list.addLast(a);
         }
-        list.exchangeNode(list);
+        list.exchangeNode();
         //list.printList();
     }
     Node head;
@@ -55,17 +55,18 @@ public class exchangeNodes {
         System.out.print(tail.data);
     }
 
-    public void exchangeNode(exchangeNodes list) {
+    public void exchangeNode() {
         if(isEmpty()) {
             return;
         }
-
-        Node curr = list.head.next;
-        System.out.print(tail.data + " ");
-        while(curr.next != null) {
+        Node temp = new Node(0);
+        temp.data = tail.data;
+        tail.data = head.data;
+        head.data = temp.data;
+        Node curr =head;
+        while(curr != null) {
             System.out.print(curr.data+" ");
             curr = curr.next;
         }
-        System.out.println(head.data);
     }
 }
