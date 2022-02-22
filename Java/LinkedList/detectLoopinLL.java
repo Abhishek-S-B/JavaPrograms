@@ -26,7 +26,7 @@ public class detectLoopinLL {
         }
         curr.next = newNode;
     }
-
+//using flag bit
     public boolean detectLoop() {
         if(head == null) {
             System.out.print("null");
