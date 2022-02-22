@@ -7,9 +7,11 @@ public class detectLoopinLL {
     static class Node {
         int data;
         Node next;
+        int flag;
         public Node(int data) {
             this.data = data;
             this.next = null;
+            this.flag = 0;
         }
     }
     public void addLast (int data) {
@@ -27,23 +29,40 @@ public class detectLoopinLL {
 
     public boolean detectLoop() {
         if(head == null) {
-            System.out.println("null");
+            System.out.print("null");
             return false;
         }
-        Node slow = head;
-        Node speed = head;
-        while (speed.next != null){
-            slow = slow.next;
-            speed = speed.next.next;
-            if(speed == null)
-                return false;
-
-
-            if(speed == slow)
+        while(head != null) {
+            if(head.flag== 1)
                 return true;
+
+            head.flag = 1;
+            head = head.next;
         }
         return false;
     }
+    //using floyd's algorithm
+//    public boolean detectLoop() {
+//        if(head == null) {
+//            System.out.println("null");
+//            return false;
+//        }
+//        Node slow = head;
+//        Node speed = head;
+//        while (speed.next != null){
+//            slow = slow.next;
+//            speed = speed.next.next;
+//            if(speed == null)
+//                return false;
+//
+//
+//            if(speed == slow)
+//                return true;
+//        }
+//        return false;
+//    }
+
+
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
