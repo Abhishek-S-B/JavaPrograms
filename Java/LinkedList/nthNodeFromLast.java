@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class nthNodeFromLast {
     Node head;
-    int size;
+
     static class Node {
         int data;
         Node next;
@@ -27,6 +27,7 @@ public class nthNodeFromLast {
         curr.next = newNode;
     }
     public int size() {
+        int size = 0;
         if(head == null) {
             return 0;
         }
@@ -52,12 +53,16 @@ public class nthNodeFromLast {
         Node curr = head;
 
         int a = size - nth;
-        for(int i = 0; i < a; i++) {
+//        for(int i = 0; i < a; i++) {
+//            curr = curr.next;
+//        }
+        while(curr != null && a > 0){
             curr = curr.next;
+            a--;
         }
         System.out.print(curr.data);
     }
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         nthNodeFromLast list = new nthNodeFromLast();
         int n = sc.nextInt();
