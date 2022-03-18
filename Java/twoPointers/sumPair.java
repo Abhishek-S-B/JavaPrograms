@@ -15,6 +15,8 @@ public class sumPair {
     }
     public static int sumOfPairNum(int[] arr, int n, int Target) {
         int i = 0, j = n-1;
+//        if(arr[i] == Target || arr[j] == Target)
+//            return 1;
         while(i < j) {
             if((arr[i] + arr[j])==Target)
                 return 1;
