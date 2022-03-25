@@ -13,9 +13,6 @@ public class queueUsingArray {
             q.enqueue(a,n);
         }
         System.out.print(q.element() + " ");
-        System.out.println(q.dequeue());
-        System.out.println(q.dequeue());
-        System.out.println(q.dequeue());
         System.out.print(q.element());
     }
     int rear;
